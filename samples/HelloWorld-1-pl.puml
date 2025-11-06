@@ -1,0 +1,19 @@
+@startuml Hello World
+!pragma revision 1
+
+!define AzurePuml https://raw.githubusercontent.com/plantuml-stdlib/Azure-PlantUML/master/dist
+!includeurl AzurePuml/AzureCommon.puml
+!includeurl AzurePuml/Databases/all.puml
+!includeurl AzurePuml/Compute/AzureFunction.puml
+!includeurl AzurePuml/Networking/AzureDNS.puml
+
+actor "Person" as personAlias
+AzureFunction(functionAlias, "Label", "Technology", "Optional Description")
+AzureCosmosDb(cosmosDbAlias, "Label", "Technology", "Optional Description")
+AzureDNS(azdns,"DNS","On Prem")
+
+
+personAlias --> functionAlias
+functionAlias --> cosmosDbAlias
+
+@enduml
